@@ -1,9 +1,9 @@
-#TWO SUM
-Action:
-
-1)Check if 7 exists in the hash map. It does not.            If it does .   
-2)Insert {2: 0} into the hash map. using map[curr] = i;      return {index of map, curr index}
-3)Hash Map State: {2: 0}
+#TWO SUM                                                                                                Example 1:                                      Example 2: 
+Action:                                                                                                 Input: nums = [2,7,11,15], target = 9           Input: nums = [3,2,4], target = 6
+                                                                                                        Output: [0,1]                                   Output: [1,2]                                                                                                      Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+1)Check if 7 exists in the hash map. It does not.            If it does .                               
+2)Insert {2: 0} into the hash map. using map[curr] = i;      return {index of map, curr index}                                                                                                                 
+3)Hash Map State: {2: 0}                                                                                
 
 ________________________________________________________________BRUTE_FORCE_________________________________________________________________________
 class Solution {
@@ -48,3 +48,21 @@ public:
 ____________________________________________________________________________________________________________________
 The hash map allows us to check if the complement exists in constant time (O(1)).
 This makes the solution efficient with a time complexity of O(n).
+____________________________________________________________________________________________________________________
+#What is a Hash Map?
+A hash map (or dictionary in Python, or object in JavaScript) is a data structure that stores key-value pairs. It allows you to:
+Store data in a way that you can quickly look up values using a key.
+____________________________________________________________________________________________________________________
+#Why Use a Hash Map?
+Hash maps are incredibly useful when you need to:
+
+Store and retrieve data quickly (e.g., counting occurrences of elements).
+Avoid duplicate work (e.g., memoization in dynamic programming).
+Check for the existence of something (e.g., finding duplicates or pairs).
+____________________________________________________________________________________________________________________
+#How Does a Hash Map Work?
+
+Hashing: When you insert a key-value pair, the hash map uses a hash function to convert the key into an index (a unique number) where the value will be stored.
+Storage: The value is stored at that index in an internal array.
+Lookup: When you want to retrieve the value, the hash map uses the same hash function to find the index and returns the value.
+____________________________________________________________________________________________________________________
