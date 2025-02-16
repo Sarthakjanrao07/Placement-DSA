@@ -1,0 +1,50 @@
+#TWO SUM
+Action:
+
+1)Check if 7 exists in the hash map. It does not.            If it does .   
+2)Insert {2: 0} into the hash map. using map[curr] = i;      return {index of map, curr index}
+3)Hash Map State: {2: 0}
+
+________________________________________________________________BRUTE_FORCE_________________________________________________________________________
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+
+        int n = nums.size();
+        
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(nums[i] + nums[j] == target){
+                    return {i,j};
+                }
+            }
+        }
+        return {};
+    }
+};
+________________________________________________________________HASH MAP_________________________________________________________________________
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+
+        map<int,int> map;
+
+        for(int i=0;i<n;i++){
+            int curr = nums[i];
+            int diff = target - curr;
+            if(map.find(diff) != map.end()){  
+                return {map[diff], i};
+            }
+
+            map[curr] = i;
+        }
+        return {-1, -1};
+    }
+};
+
+____________________________________________________________________________________________________________________
+The hash map allows us to check if the complement exists in constant time (O(1)).
+This makes the solution efficient with a time complexity of O(n).
